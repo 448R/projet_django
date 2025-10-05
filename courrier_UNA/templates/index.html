@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des Courriers</title>
+</head>
+<body>
+    <h1>Liste des courriers</h1>
+    <ul>
+        {% for courrier in courriers %}
+            <li>{{ courrier.libelle_courrier }} - {{ courrier.type_courrier.libelle_type_courrier }}</li>
+        {% empty %}
+            <li>Aucun courrier pour le moment.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

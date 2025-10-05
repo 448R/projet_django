@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestion des Courriers</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #0b2545;
+            color: #fff;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        header {
+            text-align: center;
+            padding: 60px 0 20px;
+        }
+        header h1 {
+            font-weight: 700;
+            font-size: 2.5em;
+        }
+        header p {
+            color: #ddd;
+            font-size: 1.1em;
+        }
+        .card {
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+        }
+        .card-title {
+            color: #0b2545;
+            font-weight: 600;
+        }
+        .btn-primary {
+            background-color: #0056b3;
+            border: none;
+            border-radius: 8px;
+            padding: 8px 16px;
+        }
+        .btn-primary:hover {
+            background-color: #003f8a;
+        }
+        footer {
+            text-align: center;
+            color: #bbb;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Gestion des Courriers</h1>
+        <p>Bienvenue sur votre plateforme de gestion des courriers</p>
+    </header>
+
+    <div class="container mt-5">
+        <div class="row g-4 justify-content-center">
+            <!-- Carte 1 -->
+            <div class="col-md-4">
+                <div class="card p-4">
+                    <h5 class="card-title">Nouveau courrier</h5>
+                    <p>Ajoutez un nouveau courrier à traiter.</p>
+                    <a href="{% url 'ajouter_courrier' %}" class="btn btn-primary">Ajouter</a>
+                </div>
+            </div>
+
+            <!-- Carte 2 -->
+            <div class="col-md-4">
+                <div class="card p-4">
+                    <h5 class="card-title">Liste des courriers</h5>
+                    <p>Consultez tous les courriers enregistrés.</p>
+                    <a href="{% url 'index' %}" class="btn btn-primary">Voir la liste</a>
+                </div>
+            </div>
+
+            <!-- Carte 3 -->
+            <div class="col-md-4">
+                <div class="card p-4">
+                    <h5 class="card-title">Destinataires & Services</h5>
+                    <p>Gérez les destinataires, services et directions.</p>
+                    <a href="{% url 'gerer' %}" class="btn btn-primary">Gérer</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="mt-5">
+        <p>&copy; 2025 Université Nangui Abrogoua - Gestion des Courriers</p>
+    </footer>
+</body>
+</html>

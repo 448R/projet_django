@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}Partenaires{% endblock %}
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h3>Partenaires</h3>
+    <a href="{% url 'partenaires_create' %}" class="btn btn-primary">Ajouter un partenaire</a>
+</div>
+
+<table class="table table-striped bg-white">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for p in items %}
+        <tr>
+            <td>{{ p.num_partenaire }}</td>
+            <td>{{ p.nom_partenaire }}</td>
+            <td>{{ p.prenom_partenaire }}</td>
+            <td>
+                <a class="btn btn-sm btn-outline-primary" href="{% url 'partenaires_update' p.pk %}">Modifier</a>
+                <a class="btn btn-sm btn-outline-danger" href="{% url 'partenaires_delete' p.pk %}">Supprimer</a>
+            </td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="4">Aucun partenaire.</td></tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

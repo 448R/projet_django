@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}Services{% endblock %}
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h3>Services</h3>
+    <a href="{% url 'services_create' %}" class="btn btn-primary">Ajouter un service</a>
+</div>
+
+<table class="table table-striped bg-white">
+    <thead>
+        <tr>
+            <th>Code</th>
+            <th>Nom du service</th>
+            <th>Direction</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for s in items %}
+        <tr>
+            <td>{{ s.code_service }}</td>
+            <td>{{ s.nom_service }}</td>
+            <td>{{ s.direction.nom_direction }}</td>
+            <td>
+                <a class="btn btn-sm btn-outline-primary" href="{% url 'services_update' s.code_service %}">Modifier</a>
+                <a class="btn btn-sm btn-outline-danger" href="{% url 'services_delete' s.code_service %}">Supprimer</a>
+            </td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="4">Aucun service enregistré.</td></tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

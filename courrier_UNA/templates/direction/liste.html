@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}Directions{% endblock %}
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h3>Directions</h3>
+    <a href="{% url 'directions_create' %}" class="btn btn-primary">Ajouter une direction</a>
+</div>
+
+<table class="table table-striped bg-white">
+    <thead>
+        <tr>
+            <th>Code</th>
+            <th>Nom de la direction</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for d in items %}
+        <tr>
+            <td>{{ d.code_direction }}</td>
+            <td>{{ d.nom_direction }}</td>
+            <td>
+                <a class="btn btn-sm btn-outline-primary" href="{% url 'directions_update' d.code_direction %}">Modifier</a>
+                <a class="btn btn-sm btn-outline-danger" href="{% url 'directions_delete' d.code_direction %}">Supprimer</a>
+            </td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="3">Aucune direction enregistrée.</td></tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

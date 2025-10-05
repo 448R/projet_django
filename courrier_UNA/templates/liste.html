@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Liste des Courriers</h2>
+
+{% if courriers %}
+    <table border="1" cellpadding="10">
+        <tr>
+            <th>ID</th>
+            <th>Titre</th>
+            <th>Contenu</th>
+            <th>Date de réception</th>
+        </tr>
+        {% for courrier in courriers %}
+        <tr>
+            <td>{{ courrier.id }}</td>
+            <td>{{ courrier.titre }}</td>
+            <td>{{ courrier.contenu }}</td>
+            <td>{{ courrier.date_reception }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% else %}
+    <p>Aucun courrier enregistré.</p>
+{% endif %}
+
+{% endblock %}
+
