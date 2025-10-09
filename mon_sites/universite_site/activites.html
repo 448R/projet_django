@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head><meta charset="UTF-8"><title>Activités</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header><h1>Université - Gestion des Activités</h1></header>
+  
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="salles.html">Salles</a>
+    <a href="batiments.html">Bâtiments</a>
+    <a href="activites.html">Activités</a>
+    <a href="demandes.html">Demandes</a>
+    <a href="enseignants.html">Enseignants</a>
+    <a href="ue.html">UE</a>
+    <a href="ufr.html">UFR</a>
+    <a href="parcours.html">Parcours</a>
+    <a href="niveaux.html">Niveaux</a>
+    <a href="personnel.html">Personnel</a>
+  </nav>
+
+  <div class="container">
+    <h2>Liste des Activités</h2>
+    <table>
+      <tr><th>ID</th>
+        <th>Titre</th>
+        <th>Date</th>
+        <th>Heure</th>
+        <th>Salle</th>
+        <th>Actions</th>
+      </tr>
+      <tr><td>1</td>
+        <td>Cours Math</td>
+        <td>2025-09-10</td>
+        <td>08:00</td>
+        <td>Amphi A</td>
+        <td><button class="btn">Modifier</button>
+          <button class="btn">Supprimer</button>
+        </td>
+      </tr>
+    </table>
+    <h2>Ajouter une Activité</h2>
+    <form>
+      <input type="text" placeholder="Titre" required>
+      <input type="date" required>
+      <input type="time" required>
+      <select><option>Amphi A</option><option>Salle Info 1</option></select>
+      <button type="submit" class="btn">Ajouter</button>
+    </form>
+  </div>
+</body></html>

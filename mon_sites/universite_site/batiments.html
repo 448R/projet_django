@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head><meta charset="UTF-8"><title>Bâtiments</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header><h1>Université - Gestion des Bâtiments</h1></header>
+  
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="salles.html">Salles</a>
+    <a href="batiments.html">Bâtiments</a>
+    <a href="activites.html">Activités</a>
+    <a href="demandes.html">Demandes</a>
+    <a href="enseignants.html">Enseignants</a>
+    <a href="ue.html">UE</a>
+    <a href="ufr.html">UFR</a>
+    <a href="parcours.html">Parcours</a>
+    <a href="niveaux.html">Niveaux</a>
+    <a href="personnel.html">Personnel</a>
+  </nav>
+
+  <div class="container">
+    <h2>Liste des Bâtiments</h2>
+    <table>
+      <tr><th>ID</th>
+        <th>Nom</th>
+        <th>Localisation</th>
+        <th>Actions</th>
+      </tr>
+      <tr><td>1</td>
+        <td>Sciences</td>
+        <td>Campus Nord</td>
+        <td><button class="btn">Modifier</button>
+          <button class="btn">Supprimer</button>
+        </td>
+      </tr>
+    </table>
+    <h2>Ajouter un Bâtiment</h2>
+    <form>
+      <input type="text" placeholder="Nom du bâtiment" required>
+      <input type="text" placeholder="Localisation" required>
+      <button type="submit" class="btn">Ajouter</button>
+    </form>
+  </div>
+</body></html>

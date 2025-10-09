@@ -1,0 +1,4 @@
+# Fichiers à ignorer dans le dépôt Git
+__pycache__/
+*.pyc
+db.sqlite3

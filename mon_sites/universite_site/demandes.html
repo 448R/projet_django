@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head><meta charset="UTF-8"><title>Demandes</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header><h1>Université - Demandes de Salles</h1></header>
+  
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="salles.html">Salles</a>
+    <a href="batiments.html">Bâtiments</a>
+    <a href="activites.html">Activités</a>
+    <a href="demandes.html">Demandes</a>
+    <a href="enseignants.html">Enseignants</a>
+    <a href="ue.html">UE</a>
+    <a href="ufr.html">UFR</a>
+    <a href="parcours.html">Parcours</a>
+    <a href="niveaux.html">Niveaux</a>
+    <a href="personnel.html">Personnel</a>
+  </nav>
+
+  <div class="container">
+    <h2>Liste des Demandes</h2>
+    <table>
+      <tr><th>ID</th>
+        <th>Personnel</th>
+        <th>Salle</th>
+        <th>Date</th>
+        <th>Statut</th>
+        <th>Actions</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>M. Koffi</td>
+        <td>Amphi A</td>
+        <td>2025-09-15</td>
+        <td>En attente</td>
+        <td>
+          <button class="btn">Valider</button>
+          <button class="btn">Refuser</button>
+        </td>
+      </tr>
+    </table>
+    <h2>Nouvelle Demande</h2>
+    <form>
+      <input type="text" placeholder="Nom du personnel" required>
+      <select><option>Amphi A</option><option>Salle Info 1</option></select>
+      <input type="date" required>
+      <button type="submit" class="btn">Demander</button>
+    </form>
+  </div>
+</body></html>
