@@ -1,16 +1,17 @@
-
-
-
-
-
-
 from django.urls import path
 from . import views
 
 urlpatterns = [
-    # pages principales
-    path('', views.index, name='index'),
+    # page d'accueil
+    path('', views.home, name='home'),
+
+    # courriers
+    path('index/', views.index, name='index'),                 # liste (utilisé par base.html / home)
     path('ajouter/', views.ajouter_courrier, name='ajouter_courrier'),
+    path('liste/', views.liste_courriers, name='liste_courriers'),
+
+    # gestion générale
+    path('gerer/', views.gerer, name='gerer'),
 
     # partenaires
     path('partenaires/', views.partenaires_list, name='partenaires_list'),
@@ -39,12 +40,6 @@ urlpatterns = [
     # types courriers (optionnel)
     path('types/', views.types_list, name='types_list'),
     path('types/ajouter/', views.types_create, name='types_create'),
-    
-    
-    path('', views.home, name="home"),
-    path('ajouter/', views.ajouter_courrier, name="ajouter_courrier"),
-    path('liste/', views.liste_courriers, name="liste_courriers"),
-    path('gerer/', views.gerer, name="gerer"),
 ]
 
 

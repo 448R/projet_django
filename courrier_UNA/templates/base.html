@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Gestion des courriers{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #f4f7fb; }
+        .site-header { background:#0b2545; color:white; padding:30px 0; }
+        .card { border-radius:10px; }
+        .container-main { margin-top: 30px; margin-bottom: 40px; }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg p-0">
+                <div class="container-fluid p-0 d-flex justify-content-between align-items-center">
+                    <a class="navbar-brand text-white mb-0" href="{% url 'home' %}">
+                        <h2 class="mb-0">Gestion des Courriers</h2>
+                    </a>
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon" style="color: white;">☰</span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="mainNavbar">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li class="nav-item"><a class="nav-link text-white" href="{% url 'home' %}">Accueil</a></li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-white" href="#" id="courriersMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">Courriers</a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="courriersMenu">
+                                    <li><a class="dropdown-item" href="{% url 'index' %}">Liste</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'ajouter_courrier' %}">Nouveau</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-white" href="#" id="partenairesMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">Partenaires</a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="partenairesMenu">
+                                    <li><a class="dropdown-item" href="{% url 'partenaires_list' %}">Liste</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'partenaires_create' %}">Nouveau</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-white" href="#" id="destinatairesMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">Destinataires</a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="destinatairesMenu">
+                                    <li><a class="dropdown-item" href="{% url 'destinataires_list' %}">Liste</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'destinataires_create' %}">Nouveau</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-white" href="#" id="servicesMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="servicesMenu">
+                                    <li><a class="dropdown-item" href="{% url 'services_list' %}">Liste</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'services_create' %}">Nouveau</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-white" href="#" id="directionsMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">Directions</a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="directionsMenu">
+                                    <li><a class="dropdown-item" href="{% url 'directions_list' %}">Liste</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'directions_create' %}">Nouveau</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container container-main">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="text-center py-4">
+        &copy; 2025 Université Nangui Abrogoua
+    </footer>
+
+    <!-- Bootstrap JS (nécessaire pour dropdown / collapse) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
