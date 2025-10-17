@@ -54,8 +54,7 @@ class Courrier(models.Model):
     num_courrier = models.AutoField(primary_key=True)
     libelle_courrier = models.CharField(max_length=255)
     type_courrier = models.ForeignKey(TypeCourrier, on_delete=models.CASCADE, related_name='courriers')
-    service = models.ForeignKey(Service, on_delete=models.CASCADE, related_name='courriers')
-    partenaire = models.ForeignKey(Partenaire, on_delete=models.CASCADE, related_name='courriers')
+    partenaire = models.ForeignKey(Partenaire, on_delete=models.CASCADE, related_name='courriers', null=True, blank=True)
     destinataire = models.ForeignKey(Destinataire, on_delete=models.CASCADE, related_name='courriers')
 
     def __str__(self):

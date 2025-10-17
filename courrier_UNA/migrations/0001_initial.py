@@ -58,7 +58,6 @@ class Migration(migrations.Migration):
                 ('libelle_courrier', models.CharField(max_length=255)),
                 ('destinataire', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='courriers', to='courrier_UNA.destinataire')),
                 ('partenaire', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='courriers', to='courrier_UNA.partenaire')),
-                ('service', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='courriers', to='courrier_UNA.service')),
                 ('type_courrier', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='courriers', to='courrier_UNA.typecourrier')),
             ],
         ),

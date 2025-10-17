@@ -28,10 +28,12 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
+    #'admin_interface',
+    #'colorfield',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -40,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'courrier_UNA',
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

@@ -9,3 +9,6 @@ admin.site.register(Direction)
 admin.site.register(Service)
 admin.site.register(Destinataire)
 admin.site.register(Courrier)
+admin.site.site_header="ADMINISTRATION"
+admin.site.index_title="GESTION DES COURRIERS"
+admin.site.site_title="ADMINISTRATION"

@@ -4,7 +4,7 @@ from .models import Courrier, Partenaire, Destinataire, Service, Direction, Type
 class CourrierForm(forms.ModelForm):
     class Meta:
         model = Courrier
-        fields = ['libelle_courrier', 'type_courrier', 'service', 'partenaire', 'destinataire']
+        fields = ['libelle_courrier', 'type_courrier', 'partenaire', 'destinataire']
 
 class PartenaireForm(forms.ModelForm):
     class Meta:
