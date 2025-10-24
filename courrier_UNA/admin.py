@@ -10,7 +10,6 @@ from .models import Direction, Service
 from .models import Courrier
 
 
-
 admin.site.site_header="ADMINISTRATION"
 admin.site.index_title="GESTION DES COURRIERS"
 admin.site.site_title="ADMINISTRATION"
@@ -66,5 +65,3 @@ class CourrierAdmin(admin.ModelAdmin):
 
 admin.site.register(Courrier, CourrierAdmin)
 
-
-    

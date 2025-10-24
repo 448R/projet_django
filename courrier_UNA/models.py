@@ -17,7 +17,7 @@ class TypeCourrier(models.Model):
 class Partenaire(models.Model):
     num_partenaire = models.AutoField(primary_key=True)
     nom_partenaire = models.CharField(max_length=100)
-    prenom_partenaire = models.CharField(max_length=100)
+    prenom_partenaire = models.CharField(max_length=100, null=True, blank=True)
 
     def __str__(self):
         return f"{self.prenom_partenaire} {self.nom_partenaire}"
@@ -42,7 +42,7 @@ class Service(models.Model):
 
 class Destinataire(models.Model):
     num_destinataire = models.AutoField(primary_key=True)
-    prenom_destinataire = models.CharField(max_length=100)
+    prenom_destinataire = models.CharField(max_length=100,null=True, blank=True)
     nom_destinataire = models.CharField(max_length=100)
     service = models.ForeignKey(Service, on_delete=models.CASCADE, related_name='destinataires')
 
@@ -59,3 +59,6 @@ class Courrier(models.Model):
 
     def __str__(self):
         return self.libelle_courrier
+
+  
+        

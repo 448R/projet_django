@@ -1,95 +1,65 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Gestion des Courriers</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenue sur La Plateforme Gestion Des Courriers</title>
+
     <style>
         body {
-            background-color: #0b2545;
-            color: #fff;
-            font-family: 'Segoe UI', sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url("{% static 'image/image_3.jpeg' %}") center/cover no-repeat;
+            position: relative;
+
         }
-        header {
-            text-align: center;
-            padding: 60px 0 20px;
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            backdrop-filter: blur(0px);
         }
-        header h1 {
-            font-weight: 700;
-            font-size: 2.5em;
+        .container { position: relative; text-align: center; color: white; z-index: 2;  backdrop-filter: blur(50px); border-radius: 50px; padding: 15px; }
+        .btn { background: #566256ff; color: white; padding: 12px 30px; border-radius: 50px; text-decoration: none; }
+        .btn:hover { background: #151812ff; }
+
+        
+        .logo-una {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            width: 120px;            
+            height: auto;
+            z-index: 1000;           
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            backdrop-filter: blur(5px)
         }
-        header p {
-            color: #ddd;
-            font-size: 1.1em;
+
+        .logo-una:hover {
+            transform: scale(1.05); 
+            opacity: 0.9;
         }
-        .card {
-            border-radius: 15px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.4);
-        }
-        .card-title {
-            color: #0b2545;
-            font-weight: 600;
-        }
-        .btn-primary {
-            background-color: #0056b3;
-            border: none;
-            border-radius: 8px;
-            padding: 8px 16px;
-        }
-        .btn-primary:hover {
-            background-color: #003f8a;
-        }
-        footer {
-            text-align: center;
-            color: #bbb;
-            margin-top: 50px;
-        }
+
+
     </style>
 </head>
 <body>
-    <header>
-        <h1>Gestion des Courriers</h1>
-        <p>Bienvenue sur votre plateforme de gestion des courriers</p>
-    </header>
 
-    <div class="container mt-5">
-        <div class="row g-4 justify-content-center">
-            <!-- Carte 1 -->
-            <div class="col-md-4">
-                <div class="card p-4">
-                    <h5 class="card-title">Nouveau courrier</h5>
-                    <p>Ajoutez un nouveau courrier à traiter.</p>
-                    <a href="{% url 'ajouter_courrier' %}" class="btn btn-primary">Ajouter</a>
-                </div>
-            </div>
+<header>
+  <img src="{% static 'image/image_4.png' %}" alt="Logo Université Nangui Abrogoua" class="logo-una">
+</header>
 
-            <!-- Carte 2 -->
-            <div class="col-md-4">
-                <div class="card p-4">
-                    <h5 class="card-title">Liste des courriers</h5>
-                    <p>Consultez tous les courriers enregistrés.</p>
-                    <a href="{% url 'index' %}" class="btn btn-primary">Voir la liste</a>
-                </div>
-            </div>
-
-            <!-- Carte 3 -->
-            <div class="col-md-4">
-                <div class="card p-4">
-                    <h5 class="card-title">Destinataires & Services</h5>
-                    <p>Gérez les destinataires, services et directions.</p>
-                    <a href="{% url 'gerer' %}" class="btn btn-primary">Gérer</a>
-                </div>
-            </div>
-        </div>
+    <div class="container">
+        <h1 style="color:#28201dff">BIENVENUE SUR LA PLATEFORME DE <span style="color:#2d3f2dff">GESTION DES COURRIERS</span> 💻</h1>
+        <p style="color:#28201dff">Vos courriers arrivent… avant même que vous ayez le temps de dire oups ! 📬 </p>
+        <a href="{% url 'admin:index' %}" class="btn btn-success">Accéder à l'administration</a>
     </div>
-
-    <footer class="mt-5">
-        <p>&copy; 2025 Université Nangui Abrogoua - Gestion des Courriers</p>
+    <footer style="position: absolute; bottom: 10px; width: 100%; text-align: center; color: white; z-index: 2;">   
+        <p style="color:#070707ff">&copy; 2025 Université Nangui Abrogoua - Gestion des Courriers</p>
     </footer>
 </body>
 </html>
